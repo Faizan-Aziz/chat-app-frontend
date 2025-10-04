@@ -1,5 +1,5 @@
 import React ,{useState ,useRef}from 'react'
-import "./chat.css"
+import "./Chat.css"
 import SendIcon from '@mui/icons-material/Send';
 import { useEffect } from 'react';
 import axios from 'axios';
