@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://hope-by-aziz-serverapp.onrender.com/api/:match*"
+    },
+    {
+      "source": "/user/:match*", 
+      "destination": "https://hope-by-aziz-serverapp.onrender.com/user/:match*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
+
