@@ -1,0 +1,37 @@
+/* Home.css */
+.home {
+    width: 100%;
+    height: 138vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: pink;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .home {
+        height: 120vh;
+        align-items: center;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home {
+        align-items: center;
+        flex-direction: column;
+        height: 120vh;
+        padding: 10px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .home {
+        padding: 5px;
+        height: 120vh;
+    }
+}

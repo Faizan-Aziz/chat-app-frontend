@@ -1,0 +1,285 @@
+.dashboard{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+}
+
+.dashboard-card{
+    width: 90%;
+    background-color: white;
+    height: 90%;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0 0 10px #a18c8c, 0 0 20px #ffffff;
+}
+
+.dashboard-conversation{
+    flex: 0.3;
+    border-right: 1px solid #d6d6d6;     
+}
+
+.dashboard-conv-block{
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+}
+
+.dashboard-title-block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 32px;
+}
+
+.searchBoxDiv{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.searchBox {
+    width: 85%;
+    height: 40px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid rgb(190, 190, 190);
+    background-color: #f0f2f5;
+
+}
+
+.searched-box{
+
+    position: absolute;
+    top: 44px;
+    left: 15px;
+    z-index: 1;
+    width: 77%;
+    background-color: white;
+    border: 1px solid;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+.search-item{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-item:hover{
+    background-color: #f9f2f5;
+}
+
+.search-item-profile{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+
+.search-item-mobile{
+    font-size: 14px;
+    color: #d6d6d6;
+}
+
+
+.searchBox:focus {
+    outline: none;
+}
+
+.searchIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: black;
+    color: white;
+}
+
+.conv-block{
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.nochatselected{ 
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+/* RESPONSIVE STYLES */
+
+/* Tablet devices (768px and below) */
+@media (max-width: 768px) {
+    .dashboard-card {
+        width: 95%;
+        height: 95%;
+    }
+    
+    .dashboard-conversation {
+        flex: 0.4;
+    }
+    
+    .dashboard-conv-block {
+        padding: 15px;
+    }
+    
+    .dashboard-title-block {
+        font-size: 28px;
+    }
+    
+    .searchBox {
+        height: 35px;
+        padding: 8px 20px;
+    }
+    
+    .searchIcon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .nochatselected {
+        font-size: 24px;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .dashboard-card {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        position: relative;
+    }
+    
+    /* Hide chat area by default on mobile */
+    .dashboard-conversation {
+        flex: 1;
+        width: 100%;
+    }
+    
+    /* When a chat is selected, hide the conversation list */
+    .dashboard-card.chat-active .dashboard-conversation {
+        display: none;
+    }
+    
+    /* Show chat area when active */
+    .dashboard-card.chat-active .nochatselected,
+    .dashboard-card.chat-active .dashboard-chats {
+        display: flex;
+        flex: 1;
+        width: 100%;
+    }
+    
+    /* Hide chat area by default */
+    .nochatselected,
+    .dashboard-chats {
+        display: none;
+    }
+    
+    .dashboard-conv-block {
+        padding: 10px;
+        height: 100%;
+    }
+    
+    .dashboard-title-block {
+        font-size: 24px;
+    }
+    
+    .searchBoxDiv {
+        margin: 15px 0px;
+    }
+    
+    .searchBox {
+        width: 80%;
+        height: 35px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .searchIcon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .searched-box {
+        width: 75%;
+        left: 10px;
+    }
+    
+    .nochatselected {
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+/* Small mobile devices (360px and below) */
+@media (max-width: 360px) {
+    .dashboard-conv-block {
+        padding: 8px;
+    }
+    
+    .dashboard-title-block {
+        font-size: 20px;
+    }
+    
+    .searchBox {
+        height: 32px;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .searchIcon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .searched-box {
+        width: 72%;
+    }
+    
+    .search-item {
+        font-size: 14px;
+    }
+    
+    .nochatselected {
+        font-size: 18px;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+    .dashboard-card {
+        width: 85%;
+        height: 85%;
+        max-width: 1400px;
+    }
+}

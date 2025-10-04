@@ -1,0 +1,229 @@
+.Register-card{
+    width: 40%;
+    height: fit-content;
+    box-sizing: border-box;
+    margin-top: 5%;
+    padding: 30px;
+    background: rgba(0,0,0,0.1);
+    color: black;
+    box-shadow: 0 0 10px #a18c8c, 0 0 20px #ffffff;
+    transition: transform 0.5s;
+    border-radius: 15px;
+}
+
+.Register-card:hover{
+    transform: scale(1.05);
+}
+
+.card-name{
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.Login-form {
+    width: 100%;
+    margin-top: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.inputbox{
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    border: none;
+    box-shadow:  0 0 5px #a18c8c , 0 0 white;
+    border-radius: 8px;
+    font-size: 18px;
+
+    &:focus{
+        outline: none;
+        box-shadow: 0 0 8px #a18c8c, 0 0 12px #ffffff;
+    }
+}
+
+.button{
+    padding: 15px 30px;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #a18c8c, 0 0 20px #ffffff;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    font-weight: 600;
+    margin-top: 10px;
+
+    &:hover{
+          background-color: rgb(255, 155, 155);
+          transform: translateY(-2px);
+    }
+}
+
+.LinkedLinks{
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    
+    &:hover{
+        text-decoration: underline;
+        color: #555;
+    }
+}
+
+.circle-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px dashed #ccc;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.circle-container:hover {
+  border-color: #a18c8c;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.circle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile Responsive Styles - LARGER SIZES FOR MOBILE */
+@media screen and (max-width: 768px) {
+    .Register-card {
+        width: 85%; /* Much wider on mobile */
+        margin-top: 8%; /* Reduced margin for more space */
+        padding: 35px; /* More padding */
+        min-height: 600px; /* Minimum height for register form */
+    }
+    
+    .card-name {
+        font-size: 38px; /* Larger title */
+        margin-bottom: 20px;
+    }
+    
+    .Login-form {
+        margin-top: 30px;
+        gap: 35px; /* More space between fields */
+    }
+    
+    .inputbox {
+        height: 60px; /* Taller input fields */
+        padding: 15px 20px;
+        font-size: 20px; /* Larger text */
+        border-radius: 10px;
+    }
+    
+    .button {
+        padding: 18px 35px; /* Larger button */
+        font-size: 28px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    
+    .LinkedLinks {
+        font-size: 20px; /* Larger link text */
+        margin-top: 20px;
+    }
+    
+    .circle-container {
+        width: 120px; /* Larger image upload area */
+        height: 120px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Register-card {
+        width: 92%; /* Almost full width */
+        margin-top: 6%;
+        padding: 30px;
+        min-height: 650px; /* Even taller for register form */
+    }
+    
+    .card-name {
+        font-size: 36px;
+    }
+    
+    .Login-form {
+        margin-top: 25px;
+        gap: 32px;
+    }
+    
+    .inputbox {
+        height: 58px;
+        padding: 14px 18px;
+        font-size: 19px;
+    }
+    
+    .button {
+        padding: 16px 32px;
+        font-size: 26px;
+    }
+    
+    .LinkedLinks {
+        font-size: 19px;
+    }
+    
+    .circle-container {
+        width: 110px;
+        height: 110px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .Register-card {
+        width: 95%;
+        margin-top: 4%;
+        padding: 25px;
+        min-height: 600px;
+    }
+    
+    .card-name {
+        font-size: 32px;
+    }
+    
+    .inputbox {
+        height: 55px;
+        padding: 12px 16px;
+        font-size: 18px;
+    }
+    
+    .button {
+        padding: 14px 28px;
+        font-size: 24px;
+    }
+    
+    .LinkedLinks {
+        font-size: 18px;
+    }
+    
+    .circle-container {
+        width: 100px;
+        height: 100px;
+        font-size: 14px;
+    }
+    
+    /* Reduce hover effect on mobile for better UX */
+    .Register-card:hover {
+        transform: scale(1.02);
+    }
+}

@@ -1,0 +1,298 @@
+/* ==============================
+   Base Layout
+   ============================== */
+
+.dashboard-chats {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    height: 100%;            /* full height */
+}
+
+.chatNameBlock {
+    width: 100%;
+    height: 76px;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-top-right-radius: 10px;
+}
+
+.chat-profile-img {
+    width: 55px;
+    height: 55px;
+    margin-right: 20px;
+}
+
+.chat-name {
+    font-size: 24px;
+}
+
+.chats-Block {
+  flex-grow: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 80px;   /* reserve space for input on mobile */
+}
+
+
+.chat {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.chat-send-rev-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.message {
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    max-width: 300px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+.message:hover {
+    transform: scale(1.1);
+}
+
+/* Your messages (green) */
+.message-me .message {
+    background-color: #25D366; /* WhatsApp green */
+}
+
+/* Other people's messages (light gray) */
+.chat:not(.message-me) .message {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.message-me {
+    flex-direction: row-reverse;
+}
+
+.message-box {
+    height: 75px;
+    background-color: #f0f2f5;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom-right-radius: 10px;
+}
+
+.message-input-box {
+    flex-grow: 1;
+}
+
+.messageBox {
+    width: 100%;
+}
+
+/* ==============================
+   Responsive Styles
+   ============================== */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+    .dashboard-chats {
+        flex: 0.6;
+    }
+
+    .chatNameBlock {
+        height: 65px;
+        padding: 8px 15px;
+    }
+
+    .chat-profile-img {
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+    }
+
+    .chat-name {
+        font-size: 20px;
+    }
+
+    .chat {
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .chat-send-rev-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .message {
+        font-size: 16px;
+        max-width: 250px;
+        padding: 8px;
+    }
+
+    .message-box {
+        height: 65px;
+        padding: 8px 15px;
+    }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+    .dashboard-chats {
+        flex: 1;
+        border-radius: 0;          /* remove rounded edges */
+        height: 100vh;             /* ✅ full screen height */
+    }
+
+    .chatNameBlock {
+        height: 60px;
+        padding: 8px 12px;
+        border-top-right-radius: 0;
+        position: sticky;          /* ✅ header always visible */
+        top: 0;
+        z-index: 10;
+        background-color: #f0f2f5;
+    }
+
+         .chats-Block {
+             flex-grow: 1;
+             min-height: 0;
+             overflow-y: auto;
+             padding-bottom: 80px;
+             /* ✅ space so last msg not hidden */
+         }
+
+    .chat {
+        padding: 12px 10px;
+        gap: 6px;
+    }
+
+    .chat-profile-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+
+    .chat-name {
+        font-size: 18px;
+    }
+
+    .chat-send-rev-image {
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
+    }
+
+    .message {
+        font-size: 14px;
+        max-width: 200px;
+        padding: 8px 10px;
+        word-break: break-word;
+    }
+
+    .message-box {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background-color: #f0f2f5;
+    height: 60px;
+    padding: 8px 12px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+    .messageBox {
+        font-size: 14px;
+    }
+
+    .message-me {
+        flex-direction: row-reverse;
+    }
+
+    .message-me .chat-send-rev-image {
+        margin-left: 6px;
+    }
+}
+
+/* Small mobile (≤360px) */
+@media (max-width: 360px) {
+    .chatNameBlock {
+        height: 55px;
+        padding: 6px 10px;
+    }
+
+    .chat-profile-img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+
+    .chat-name {
+        font-size: 16px;
+    }
+
+    .chat {
+        padding: 10px 8px;
+        gap: 5px;
+    }
+
+    .chat-send-rev-image {
+        width: 32px;
+        height: 32px;
+    }
+
+    .message {
+        font-size: 15px;
+        max-width: 180px;
+        padding: 6px 8px;
+    }
+
+    .message-box {
+        height: 55px;
+        padding: 6px 10px;
+    }
+
+    .messageBox {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+    .message {
+        max-width: 400px;
+    }
+
+    .chats-Block {
+        padding: 0 10px;
+    }
+}
+
+/* Short screens */
+@media (max-height: 600px) {
+    .chatNameBlock {
+        height: 55px;
+    }
+
+    .message-box {
+        height: 55px;
+    }
+
+    .chat {
+        padding: 12px 15px;
+    }
+}
