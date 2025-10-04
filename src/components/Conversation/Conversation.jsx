@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react'
-import './conversation.css'
+import './Conversation.css'
 
 const Conversation = (props) => {    // ← Outer function (component)
 
