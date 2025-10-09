@@ -1,16 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/api/:match*",
-      "destination": "https://chat-app-server-ulsb.onrender.com/api/:match*"
+      "source": "/api/:path*",
+      "destination": "https://chat-app-server-ulsb.onrender.com/api/:path*"
     },
     {
-      "source": "/user/:match*", 
-      "destination": "https://chat-app-server-ulsb.onrender.com/user/:match*"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/socket.io/:path*",
+      "destination": "https://chat-app-server-ulsb.onrender.com/socket.io/:path*"
     }
   ]
 }
